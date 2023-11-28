@@ -1,24 +1,3 @@
-<<<<<<< HEAD
-const express = require('express');
-const app = express();
-const expbs = require('express-handlebars');
-
-app.engine('handlebars', expbs({ defaultLayout: 'main'}));
-app.set('view engine', 'handlebars');
-
-// Routing
-app.get('/', (req, res) => {
-    res.render('index'); 
-});
-
-app.get('/about', (req, res) => {
-    res.render('about');
-});
-
-app.listen(8080, () => {
-    console.log('Server is starting at port ', 8080);
-});
-=======
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -59,4 +38,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`app listing on port ${PORT}`));
 });
->>>>>>> f9f70d96d73729ae9ddbcadd392e13ed7ddd0166
