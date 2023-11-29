@@ -27,7 +27,7 @@ User.init(
             allowNull :false,
             validate: {
                 // Password must be eight digits
-                len: [8],
+                len: [2],
             },
         },
     },
