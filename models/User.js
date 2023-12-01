@@ -26,7 +26,6 @@ User.init(
             type: DataTypes.STRING,
             allowNull :false,
             validate: {
-                // Password must be eight digits
                 len: [8],
             },
         },

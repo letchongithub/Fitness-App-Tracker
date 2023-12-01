@@ -1,0 +1,275 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+}
+.navbar.navbar-dark {
+    background-color: black !important;
+    color: white;
+}
+.navbar-brand {
+    color: #b8cba2;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+#logout {
+    color: white;
+    font-size: 24px;
+    margin-right: 18px;
+  }
+
+#home {
+    color: #b8cba2; 
+}
+
+#logout {
+        background-color: black;
+        color: white;
+        margin-top: 7px;
+        border: none;
+
+}
+#username-signup, #password-signup, #username-login, #password-login {
+    background-color: white;
+    color: black;
+    height: 60px;
+    font-size: 28px;
+}
+#techBlogBtn {
+    background-color: #b8cba2;
+    color:  #2c2307;
+    padding: 15px 20px;
+    font-size: 36px;
+    border-bottom: 8px solid grey;
+    border-right: 8px solid grey;
+    border-radius: 8px;
+    margin-top: 7px;
+}
+body{
+    background-color: white;
+
+}
+.btn.btn-primary-login-signup {
+    color: white;
+    background-color: black;
+}
+.container-container-fluid.mt-5{
+    border: 25px solid  #2c2307;
+}
+.main-container {
+    margin-left: 40px;
+}
+
+.container-box {
+    border: 4px solid #2c2307;
+    padding: 15px; 
+}
+.container-box h2 {
+    margin-top: -15px;
+    margin-left: -15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: calc(100% + 30px);
+}
+.post {
+    margin-top: -15px;
+    margin-left: -15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    width: calc(100% + 30px);   
+}
+.form-control::placeholder {
+    color: black;
+}
+
+.form-control:-ms-input-placeholder {
+    color:  black;
+}
+.form-control {
+    color:  black;
+  }
+  .form-control:focus {
+    color:  black;
+  }
+.btn-primary {
+    background-color: grey;
+    color: white;
+}
+.btn-primary:hover {
+    color: white;
+    background-color: blue;
+}
+a {
+    color: #2c2307;
+    font-size: 24px;
+}
+h2 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.custom-btn-wide {
+    width: 100%;
+}
+a.signup-link, a.login-link {
+    color: blue;
+}
+.form-label {
+    font-size: 28px;
+    color: black;
+}
+
+.blogTitle {
+    color: white;
+    font-size: 32px;
+}
+.blog.text {
+    color: white;
+}
+
+.blog {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background-color: black;
+    color: white;
+    padding-right: 10px
+}
+.blogContentTop{
+    font-size: 28px;
+    margin-left: 1%;
+}
+.blog-text {
+    margin-left: auto;
+    color: white;
+
+}
+.border-box {
+    width: 115%;
+    border: 3px solid  #2c2307; 
+    background-color: rgb(0, 0, 80);
+    box-sizing: border-box;
+    color: white;
+
+}
+
+/* Apply margin to the bottom of the first .border-box */
+.border-box:first-child {
+    margin-bottom: 15px;
+}
+
+/* Apply margin to the top of all .border-box elements starting from the second one */
+.border-box:not(:first-child) {
+    margin-top: 15px; 
+}
+
+.modal-dialog{
+    background-color: #b8cba2;
+    color: #2c2307;
+    border: 2px solid #2c2307; 
+    border-radius: 10px;
+}
+.modal-content{
+    background-color: #b8cba2;
+    color: #2c2307;
+    border: 2px solid #2c2307; 
+    border-radius: 10px;
+}
+.modal-header{
+    border-radius: 10px;
+    border-bottom: 2px solid #2c2307;
+}
+#loginModal .modal-header{
+    border-bottom: none;
+}
+.modal-body {
+    background-color: #b8cba2;
+    color: #2c2307;
+    border-bottom: none; 
+}
+
+.modal-footer{
+    background-color: #b8cba2;
+    color: #2c2307;
+    border-top: none;
+}
+.dashboard-content {
+    border: 3px solid #2c2307;
+    /* border-radius: 25px; */
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.dashboard-column {
+    width: 100%;
+}
+#blog-title, #blog-desc {
+    font-size: 28px;
+    color: black;
+}
+.blogDescriptionpt2 {
+    font-size: 24px;
+    margin-left: 10px;
+}
+.textAreaCont textarea {
+  padding-left: 10px;
+}
+.textAreaCont {
+    margin-right: 20px;
+}
+.commentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: white;
+}
+.textAreaCont.p-2 textarea {
+    width: 117%;
+  }
+.btnComment.p-2 {
+    display: flex;
+    /* justify-content: center; */
+}
+.btn-success{
+    background-color: grey;
+    color: white;
+}
+.buttom.btn.btn-success {
+    background-color: grey;
+    color: white;
+    width: 150px;
+    margin: 0 auto;
+}
+.btn-success:hover {
+    background-color: blue;
+    color: white;
+}
+.text-center {
+    width: 115%;
+}
+.commentWrapper{
+    width: 115%
+}
+.existing-blog {
+    width: 120%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-right: -20%;
+}
+.existing-blogs-container h3 {
+    color: white;
+  }
+.text-blog {
+    border: 3px solid #2c2307;
+}
+
