@@ -1,56 +1,53 @@
 <!-- Container for the dashboard content -->
-<div class="container">
+<div class="container mx-auto">
     <!-- Row for the dashboard title -->
-    <div class="row">
-        <div class="col-8 dashboard-column">
-        <div class="dashboard-content">
-          <!-- Dashboard title with the username -->
-    <h2 class="post"> {{username}}: Add Your Workout Plan</h2>
-      <!-- Form for creating a new blog -->
-        <form class="form new-blog-form">
-          <!-- Input field for the blog title -->
-            <div class="mb-3">
-              <label for="blog-title" class="form-label">Type of Workout</label>
-            <input type="text" class="form-control" id="blog-title" placeholder="Workout Name" />
+    <div class="flex">
+        <div class="w-8/12 dashboard-column">
+            <div class="dashboard-content p-4 border border-gray-300 rounded">
+                <!-- Dashboard title with the username -->
+                <h2 class="text-xl font-bold mb-4">{{username}}: Add Your Workout Plan</h2>
+                <!-- Form for creating a new blog -->
+                <form class="form new-blog-form">
+                    <!-- Input field for the blog title -->
+                    <div class="mb-4">
+                        <label for="blog-title" class="block text-sm font-semibold mb-2">Type of Workout</label>
+                        <input type="text" class="w-full px-4 py-2 border rounded" id="blog-title" placeholder="Workout Name" />
+                    </div>
+                    <!-- Textarea for the blog content -->
+                    <div class="mb-4">
+                        <label for="blog-desc" class="block text-sm font-semibold mb-2">Workout Plan</label>
+                        <textarea class="w-full px-4 py-2 border rounded" id="blog-desc" name="blog-desc" placeholder="Workout"></textarea>
+                    </div>
+                    <!-- Button to submit the new blog -->
+                    <div class="mb-4">
+                        <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded"><span>+</span>Create Your Plan</button>
+                    </div>
+                </form>
             </div>
-            <!-- Textarea for the blog content -->
-            <div class="mb-3">
-              <label for="blog-desc" class="form-label">Workout Plan</label>
-            <textarea class="form-control" id="blog-desc"  name="blog-desc" placeholder="Workout"></textarea>
+        </div>
+
+        <!-- Conditional rendering to check if blog exists -->
+        {{#if blogs.length}}
+            <!-- Column for displaying the list of current blogs -->
+            <div class="w-10/12 blog-list existing-blogs-container">
+                <!-- Title for the list of current blogs -->
+                <h3 class="text-lg font-semibold mb-2">Current Workout Plans:</h3>
+                <!-- Loop through each blog in the list -->
+                {{#each blogs as |blog|}}
+                    <div class="existing-blog mb-4 p-4 border border-gray-300 rounded">
+                        <div class="mb-2">
+                            <!-- Column for the blog title with a link to the blog -->
+                            <h4><a href="/blog/{{blog.id}}" class="text-blue-500">{{blog.title}}</a></h4>
+                        </div>
+                        <div class="mb-2">
+                            <!-- Column for the delete button with data-id used to blog id -->
+                            <button class="bg-red-500 text-white py-2 px-4 rounded" data-id="{{blog.id}}">DELETE Workout</button>
+                        </div>
+                    </div>
+                {{/each}}
             </div>
-            <!-- Button to submit the new blog -->
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary custom-btn-wide"><span>+</span>Create Your Plan</button>
-            </div>
-        </form>
+        {{/if}}
     </div>
-</div>
-    </div>
-  <!-- Conditional rendering to check if blog exists -->
-  {{#if blogs.length}}
-  <!-- Column for displaying the list of current blogs -->
-  <div class="col-md-10 blog-list existing-blogs-container">
-    <!-- Title for the list of current blogs -->
-    <h3>Current Workout Plans:</h3>
-    <!-- Loop through each blog in the list -->
-    {{#each blogs as |blog|}}
-    <div class="existing-blog">
-    <div class="row mb-2">
-      <!-- Column for the blog title with a link to the blog -->
-      <div class="col-md-12">
-        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
-      </div>
-      </div>
-      <div class="row mb-2">
-      <div class="col-md-12">
-        <!-- Column for the delete button with data-id used to blog id -->
-        <button class="btn btn-danger" data-id="{{blog.id}}">DELETE Workout</button>
-      </div>
-    </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
 </div>
 
 <script src="/js/dashboard.js"></script>
