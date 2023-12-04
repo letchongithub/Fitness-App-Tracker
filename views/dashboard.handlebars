@@ -1,0 +1,56 @@
+<!-- Container for the dashboard content -->
+<div class="container">
+    <!-- Row for the dashboard title -->
+    <div class="row">
+        <div class="col-8 dashboard-column">
+        <div class="dashboard-content">
+          <!-- Dashboard title with the username -->
+    <h2 class="post"> {{username}}: Add Your Workout Plan</h2>
+      <!-- Form for creating a new blog -->
+        <form class="form new-blog-form">
+          <!-- Input field for the blog title -->
+            <div class="mb-3">
+              <label for="blog-title" class="form-label">Type of Workout</label>
+            <input type="text" class="form-control" id="blog-title" placeholder="Workout Name" />
+            </div>
+            <!-- Textarea for the blog content -->
+            <div class="mb-3">
+              <label for="blog-desc" class="form-label">Workout Plan</label>
+            <textarea class="form-control" id="blog-desc"  name="blog-desc" placeholder="Workout"></textarea>
+            </div>
+            <!-- Button to submit the new blog -->
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary custom-btn-wide"><span>+</span>Create Your Plan</button>
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+  <!-- Conditional rendering to check if blog exists -->
+  {{#if blogs.length}}
+  <!-- Column for displaying the list of current blogs -->
+  <div class="col-md-10 blog-list existing-blogs-container">
+    <!-- Title for the list of current blogs -->
+    <h3>Current Workout Plans:</h3>
+    <!-- Loop through each blog in the list -->
+    {{#each blogs as |blog|}}
+    <div class="existing-blog">
+    <div class="row mb-2">
+      <!-- Column for the blog title with a link to the blog -->
+      <div class="col-md-12">
+        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+      </div>
+      </div>
+      <div class="row mb-2">
+      <div class="col-md-12">
+        <!-- Column for the delete button with data-id used to blog id -->
+        <button class="btn btn-danger" data-id="{{blog.id}}">DELETE Workout</button>
+      </div>
+    </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="/js/dashboard.js"></script>
