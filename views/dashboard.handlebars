@@ -20,7 +20,7 @@
                     </div>
                     <!-- Button to submit the new blog -->
                     <div class="mb-4">
-                        <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded"><span>+</span>Create Your Plan</button>
+                        <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded"><span>+</span>Create Your Plan</button>
                     </div>
                 </form>
             </div>
@@ -37,11 +37,11 @@
                     <div class="existing-blog mb-4 p-4 border border-gray-300 rounded">
                         <div class="mb-2">
                             <!-- Column for the blog title with a link to the blog -->
-                            <h4><a href="/blog/{{blog.id}}" class="text-blue-500">{{blog.title}}</a></h4>
+                            <h4><a href="/blog/{{blog.id}}" class="text-black">{{blog.title}}</a></h4>
                         </div>
                         <div class="mb-2">
                             <!-- Column for the delete button with data-id used to blog id -->
-                            <button class="bg-red-500 text-white py-2 px-4 rounded" data-id="{{blog.id}}">DELETE Workout</button>
+                            <button class="bg-black text-white py-2 px-4 rounded" data-id="{{blog.id}}">DELETE Workout</button>
                         </div>
                     </div>
                 {{/each}}
