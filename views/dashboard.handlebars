@@ -1,24 +1,24 @@
-<!-- Container for the dashboard content -->
+<!-- Container for the profile-dashboard content -->
 <div class="container mx-auto">
-    <!-- Row for the dashboard title -->
+    <!-- Row for the profile-dashboard title -->
     <div class="flex">
         <div class="w-8/12 dashboard-column">
             <div class="dashboard-content p-4 border border-gray-300 rounded">
-                <!-- Dashboard title with the username -->
+                <!-- Profile-Dashboard title with the username -->
                 <h2 class="text-xl font-bold mb-4">{{username}}: Add Your Workout Plan</h2>
-                <!-- Form for creating a new blog -->
+                <!-- Form for creating a new Workout blog -->
                 <form class="form new-blog-form">
-                    <!-- Input field for the blog title -->
+                    <!-- Input field for the Workout blog title -->
                     <div class="mb-4">
                         <label for="blog-title" class="block text-sm font-semibold mb-2">Type of Workout</label>
                         <input type="text" class="w-full px-4 py-2 border rounded placeholder-white bg-black" id="blog-title" placeholder="Workout Name" />
                     </div>
-                    <!-- Textarea for the blog content -->
+                    <!-- Textarea for the Workout blog content -->
                     <div class="mb-4">
                         <label for="blog-desc" class="block text-sm font-semibold mb-2">Workout Plan</label>
                         <textarea class="w-full px-4 py-2 border rounded placeholder-white bg-black" id="blog-desc" name="blog-desc" placeholder="Workout"></textarea>
                     </div>
-                    <!-- Button to submit the new blog -->
+                    <!-- Button to submit the new workout blog -->
                     <div class="mb-4">
                         <button type="submit" class="bg-black text-white font-bold py-2 px-4 rounded"><span>+</span>Create Your Plan</button>
                     </div>
@@ -26,17 +26,17 @@
             </div>
         </div>
 
-        <!-- Conditional rendering to check if blog exists -->
+        <!-- Conditional rendering to check if workout blog exists -->
         {{#if blogs.length}}
-            <!-- Column for displaying the list of current blogs -->
+            <!-- Column for displaying the list of current workout blogs -->
             <div class="w-full sm:w-10/12 blog-list existing-blogs-container m1-2">
-                <!-- Title for the list of current blogs -->
+                <!-- Title for the list of current workout blogs -->
                 <h3 class="text-lg font-semibold mb-2">Current Workout Plans:</h3>
-                <!-- Loop through each blog in the list -->
+                <!-- Loop through each workout blog in the list -->
                 {{#each blogs as |blog|}}
                     <div class="existing-blog mb-4 p-4 border border-gray-300 rounded bg-black text-white">
                         <div class="mb-2">
-                            <!-- Column for the blog title with a link to the blog -->
+                            <!-- Column for the workout blog title with a link to the blog -->
                             <h4><a href="/blog/{{blog.id}}" class="text-white">{{blog.title}}</a></h4>
                         </div>
                         <div class="mb-2">

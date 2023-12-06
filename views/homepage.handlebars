@@ -1,21 +1,21 @@
 {{#each workouts as |blog|}}
-  <!-- Iterating through each blog in the 'blogs' array -->
+  <!-- Iterating through each workout blog in the 'workouts' array -->
   <div class="border-box">
-    <!-- Container for the entire blog post -->
+    <!-- Container for the entire workout blog post -->
     <div class="blog">
-      <!-- Heading with a link to the individual blog post -->
+      <!-- Heading with a link to the individual workout blog post -->
       <div class="blog-header">
         <h2>
           <a class="blogTitle" href="/blog/{{blog.id}}">{{blog.title}}</a>
         </h2>
-        <!-- Paragraph displaying information about the blog post and author -->
+        <!-- Paragraph displaying information about the workout blog post and author -->
         <p class="blog text">
           Workout Planned by {{blog.user.username}} on {{format_date blog.date_created}}
         </p>
       </div>
-      <!-- Container for the main content of the blog post -->
+      <!-- Container for the main content of the workout blog post -->
       <div class="blogDescription">
-        <!-- Paragraph displaying the top content of the blog post -->
+        <!-- Paragraph displaying the top content of the workout blog post -->
         <p class="blogContentTop">
           {{blog.description}}
         </p>

@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// Define the Blog class as an extension of the Sequelize Model class
+// Define the Workout class as an extension of the Sequelize Model class
 class Workout extends Model {}
 
 Workout.init(

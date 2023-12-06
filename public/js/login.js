@@ -11,7 +11,7 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-      // Redirect to the '/dashboard' page if the login is successful
+      // Redirect to the '/profile' page if the login is successful
       if (response.ok) {
         document.location.replace('/profile');
       } else {

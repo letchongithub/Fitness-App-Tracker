@@ -2,13 +2,13 @@ const router = require('express').Router();
 const { Workout } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-// Route to create a new blog post to the root path (requires authentication - means your loggedIn)
+// Route to create a new workout blog post to the root path (requires authentication - means your loggedIn)
 router.post('/', withAuth, async (req, res) => {
     try {
       const newWorkout = await Workout.create({
         // Spread operator to include properties from the request body
         ...req.body,
-        // Setting the user_id for the blog entry based on the user session
+        // Setting the user_id for the workout blog entry based on the user session
         user_id: req.session.user_id,
       });
   
@@ -22,7 +22,7 @@ router.post('/', withAuth, async (req, res) => {
     try {
       const workoutData = await Workout.destroy({
         where: {
-          // Deleting the blog with the specified id
+          // Deleting the workout blog with the specified id
           id: req.params.id,
           // Setting that the user_id matches the user's session
           user_id: req.session.user_id,

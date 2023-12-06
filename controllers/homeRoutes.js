@@ -5,18 +5,18 @@ const withAuth = require('../utils/auth');
 // GET route for the root path or homepage
 router.get('/', async (req, res) => {
 	try {
-		// Retrieve blog data with associated usernames
+		// Retrieve workout blog data with associated usernames
 		const workoutData = await Workout.findAll({
 			include: [{
 				model: User,
 				attributes: ['username'],
 			},],
 		});
-		// Map blog data to plain JavaScript objects
+		// Map workout blog data to plain JavaScript objects
 		const workouts = workoutData.map((workout) => workout.get({
 			plain: true
 		}));
-		// Render the homepage view with blog data and logged_in status
+		// Render the homepage view with workout blog data and logged_in status
 		res.render('homepage', {
 			workouts,
 			logged_in: req.session.logged_in
@@ -25,7 +25,7 @@ router.get('/', async (req, res) => {
 		res.status(500).json(err);
 	}
 });
-// GET route for a specific blog endpoint post based on id
+// GET route for a specific workout blog endpoint post based on id
 router.get('/blog/:id', async (req, res) => {
 	try {
 		const workoutData = await Workout.findByPk(req.params.id, {
@@ -49,7 +49,7 @@ router.get('/blog/:id', async (req, res) => {
 		});
 
 		console.log(blog)
-		// Rendering the 'blog' view with the retrieved data and additional information
+		// Rendering the workout 'blog' view with the retrieved data and additional information
 		res.render('blog', {
 			// Spread operator to include data from the blog object
 			...blog,
@@ -74,7 +74,7 @@ router.get('/profile', withAuth, async (req, res) => {
 		const user = userData.get({
 			plain: true
 		});
-		// Render dashboard view with user login data
+		// Render login dashboard view with user login data
 			console.log(user);
 		res.render('dashboard', {
 			//Spres user properties into view data

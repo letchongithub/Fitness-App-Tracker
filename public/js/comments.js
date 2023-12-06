@@ -1,8 +1,8 @@
 const commentFormHandler = async function (event) {
 	event.preventDefault();
-	// Get the blog_id from the custom dataset attribute of the form
+	// Get the workout blog_id from the custom dataset attribute of the form
 	const blog_id = document.querySelector('.new-comment-form').dataset.blogid;
-	// Get the comment description from the input field and trim any extra whitespace
+	// Get the workout comment description from the input field and trim any extra whitespace
 	const comment_description = document.querySelector('#comment_description').value.trim();
 
 	if (comment_description) {

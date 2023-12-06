@@ -12,7 +12,7 @@ const signUpFormHandler = async (event) =>{
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-      // Redirect to the dashboard page if the sign-up is successful
+      // Redirect to the profile page if the sign-up is successful
       document.location.replace('/profile');
         } catch (error) {
           console.log(error);

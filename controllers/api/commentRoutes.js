@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-// Route to get all comments from the root path
+// Route to get all recorded workout comments from the root path
 router.get('/',async (req,res) => {
   try {
     const commentData =await Comment.findAll({});
@@ -11,7 +11,7 @@ router.get('/',async (req,res) => {
         res.status(500).json(err)
     }
 });
-// Route to get a specific comment by ID from the root path
+// Route to get a specific recorder workout comment by ID from the root path
 router.get('/:id', async (req, res) => {
   try {
     const commentData =await Comment.findAll({
@@ -25,13 +25,13 @@ router.get('/:id', async (req, res) => {
             res.status(500).json(err);
         }
 });
-// Route to create a new comment to the root path
+// Route to create a new workout comment to the root path
 router.post('/', async (req, res) => {
   try {
     const newComment = await Comment.create({
       // Spread operator to include data from the request body
       ...req.body,
-      // Set the user_id for the new comment based on the authenticated user
+      // Set the user_id for the new workout comment based on the authenticated user
       user_id: req.session.user_id,
     });
     res.json(newComment);
@@ -39,12 +39,12 @@ router.post('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-// Route to delete a comment by ID from the root path (requires authentication - must be loggedin)
+// Route to delete a workout comment by ID from the root path (requires authentication - must be loggedin)
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.destroy({
       where: {
-        // Deleting the blog with the specified id
+        // Deleting the workout blog with the specified id
         id: req.params.id,
         // Setting that the user_id matches the user's session
         user_id: req.session.user_id,

@@ -1,10 +1,10 @@
-<!-- Container for the blog content -->
+<!-- Container for the workout blog content -->
 <div class="border-box">
-    <!-- Container for the blog header -->
+    <!-- Container for the workout blog header -->
     <div class="blog">
         <!-- Header row with title and author information -->
         <div class="blog-header">
-            <!-- Blog title -->
+            <!-- Workout Blog title -->
             <h2 class="blogTitle">{{title}}</h2>
             <p class="blogCreate">Posted by {{user.username}} on {{format_date date_created}}</p>
         </div>
@@ -13,13 +13,13 @@
             <!-- You may adjust this column based on your layout needs -->
         </div>
     </div>
-    <!-- Blog description -->
+    <!-- Workout Blog description -->
     <p class="blogDescriptionpt2">{{description}}</p>
 </div>
 
 <!-- Conditional rendering for logged-in users -->
 {{#if logged_in}}
-    <!-- Form for adding new comments by setting blogid to value {{id}} to use in comments.js -->
+    <!-- Form for adding new comments by setting Work blogid to value {{id}} to use in comments.js -->
     <form class="new-comment-form" data-blogid={{id}}>
         <div class="textAreaCont p-2">
             <!-- Textarea for entering comments -->
