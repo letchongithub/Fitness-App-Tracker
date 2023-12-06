@@ -11,12 +11,12 @@
                     <!-- Input field for the blog title -->
                     <div class="mb-4">
                         <label for="blog-title" class="block text-sm font-semibold mb-2">Type of Workout</label>
-                        <input type="text" class="w-full px-4 py-2 border rounded" id="blog-title" placeholder="Workout Name" />
+                        <input type="text" class="w-full px-4 py-2 border rounded placeholder-white bg-black" id="blog-title" placeholder="Workout Name" />
                     </div>
                     <!-- Textarea for the blog content -->
                     <div class="mb-4">
                         <label for="blog-desc" class="block text-sm font-semibold mb-2">Workout Plan</label>
-                        <textarea class="w-full px-4 py-2 border rounded" id="blog-desc" name="blog-desc" placeholder="Workout"></textarea>
+                        <textarea class="w-full px-4 py-2 border rounded placeholder-white bg-black" id="blog-desc" name="blog-desc" placeholder="Workout"></textarea>
                     </div>
                     <!-- Button to submit the new blog -->
                     <div class="mb-4">
@@ -34,14 +34,14 @@
                 <h3 class="text-lg font-semibold mb-2">Current Workout Plans:</h3>
                 <!-- Loop through each blog in the list -->
                 {{#each blogs as |blog|}}
-                    <div class="existing-blog mb-4 p-4 border border-gray-300 rounded">
+                    <div class="existing-blog mb-4 p-4 border border-gray-300 rounded bg-black text-white">
                         <div class="mb-2">
                             <!-- Column for the blog title with a link to the blog -->
-                            <h4><a href="/blog/{{blog.id}}" class="text-black">{{blog.title}}</a></h4>
+                            <h4><a href="/blog/{{blog.id}}" class="text-white">{{blog.title}}</a></h4>
                         </div>
                         <div class="mb-2">
                             <!-- Column for the delete button with data-id used to blog id -->
-                            <button class="bg-black text-white py-2 px-4 rounded" data-id="{{blog.id}}">DELETE Workout</button>
+                            <button class="bg-red-500 text-white py-2 px-4 rounded" data-id="{{blog.id}}">DELETE Workout</button>
                         </div>
                     </div>
                 {{/each}}
